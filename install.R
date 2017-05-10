@@ -6,8 +6,8 @@ if (!library("reshape2", quietly = TRUE,logical.return=TRUE )) { install.package
 if (!library("Hmisc", quietly = TRUE,logical.return=TRUE )) { install.packages(c('Hmisc'),  repos='https://ftp.acc.umu.se/mirror/CRAN/'); library(Hmisc)}
 if (!library("RColorBrewer", quietly = TRUE,logical.return=TRUE )) { install.packages(c('RColorBrewer'),  repos='https://ftp.acc.umu.se/mirror/CRAN/'); library(RColorBrewer)}
 source("https://bioconductor.org/biocLite.R")
-if (!library("FactoMineR", quietly = TRUE,logical.return=TRUE )) { biocLite('FactoMineR'); library(FactoMineR)}
-if (!library("pcaMethods", quietly = TRUE,logical.return=TRUE )) { biocLite('pcaMethods'); library(pcaMethods)}
+if (!library("FactoMineR", quietly = TRUE,logical.return=TRUE )) { biocLite('FactoMineR',suppressUpdates=TRUE); library(FactoMineR)}
+if (!library("pcaMethods", quietly = TRUE,logical.return=TRUE )) { biocLite('pcaMethods',suppressUpdates=TRUE); library(pcaMethods)}
 if (!library("gProfileR", quietly = TRUE,logical.return=TRUE )) { install.packages(c('gProfileR'),  repos='https://ftp.acc.umu.se/mirror/CRAN/'); library(gProfileR)}
 if (!library("plyr", quietly = TRUE,logical.return=TRUE )) { install.packages(c('plyr'),  repos='https://ftp.acc.umu.se/mirror/CRAN/'); library(plyr)}
 if (!library("Hmisc", quietly = TRUE,logical.return=TRUE )) { install.packages(c('Hmisc'),  repos='https://ftp.acc.umu.se/mirror/CRAN/'); library(Hmisc)}
