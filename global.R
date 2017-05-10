@@ -1,14 +1,16 @@
 #Author: Tauno Metsalu
 #Copyright: 2016 University of Tartu
 
-path = "/srv/shiny-server/" #path of this file
-libPath = "/usr/local/lib/R/site-library/" #path of R libraries
-sessPathLarge = "/srv/settings_large/" #where to save settings with large datasets
-sessPath = "/srv/settings/" #where to save settings
-sessPathExternal = "/srv/settings_external/" #where to save settings for externally saved datasets
-pbPathPrefix = "/srv/data_pb/" #path of MEM files
+srvPath= file.path("", "str")
+path = "/home/med-sal/gitlab_test/ClustVis/" #path of this file
+#libPath = "/usr/local/lib/R/site-library/" #path of R libraries
+sessPathLarge = file.path(srvPath,"settings_large","") #where to save settings with large datasets
+sessPath = file.path(srvPath,"settings", "") #where to save settings
+sessPathExternal = file.path(srvPath,"settings_external","") #where to save settings for externally saved datasets
+pbPathPrefix = file.path(srvPath,"data_pb","") #path of MEM files
 
-.libPaths(libPath)
+#.libPaths(libPath)
+#install.packages(c('devtools'),  repos='https://ftp.acc.umu.se/mirror/CRAN/')
 library(stringr)
 library(RNetCDF)
 library(shiny)
