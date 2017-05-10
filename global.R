@@ -1,8 +1,13 @@
 #Author: Tauno Metsalu
 #Copyright: 2016 University of Tartu
 
-srvPath= file.path("", "srv")
-path = "/home/med-sal/gitlab_test/ClustVis/" #path of this file
+scriptPath <- function() {
+  getSrcDirectory(scriptPath);
+}
+
+srvPath= file.path( scriptPath() ,"srv","")
+path = file.path(scriptPath(),'')
+#path = "/home/med-sal/gitlab_test/ClustVis/" #path of this file
 #libPath = "/usr/local/lib/R/site-library/" #path of R libraries
 sessPathLarge = file.path(srvPath,"settings_large","") #where to save settings with large datasets
 sessPath = file.path(srvPath,"settings", "") #where to save settings

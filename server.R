@@ -1,7 +1,8 @@
 #Author: Tauno Metsalu
 #Copyright: 2016 University of Tartu
 
-source(file.path("","srv","shiny-server","global.R") )
+source(file.path( getwd(),'..','..','global.R'))
+#source(file.path("","srv","shiny-server","global.R") )
 
 shinyServer(function(input, output, session) {
 	readData = reactive({

@@ -1,4 +1,14 @@
-# ClustVis
+# Install this forked version of ClusVis using RStudio to run it
+
+(a) clone this repository
+(b) start RStudio
+(c) run the install.R script to install all required R packages
+(c) load any of the R scripts in the package main folder and 'Run App'
+
+You are ready to use the software locally.
+
+
+# ClustVis (original Readme)
 Souce code of [ClustVis](http://biit.cs.ut.ee/clustvis/) web tool.
 
 The code is distributed under GNU GPLv3. If you are interested in other licensing options, please contact the author.
