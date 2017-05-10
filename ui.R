@@ -1,7 +1,7 @@
 #Author: Tauno Metsalu
 #Copyright: 2016 University of Tartu
 
-source("/srv/shiny-server/global.R")
+source(file.path("","srv","shiny-server","global.R") )
 
 h = 800
 pcaPlot = uiOutput("pca", height = "100%", width = "100%")
@@ -60,7 +60,7 @@ fluidPage(
   extendShinyjs(text = jsCode),
   titlePanel(
     fluidRow(
-      img(src = "frontPage/logo_small.png", width = 125, style = "margin-top:-10px; margin-right:-10px"),
+      img(src = file.path("frontPage","logo_small.png"), width = 125, style = "margin-top:-10px; margin-right:-10px"),
       str_c(titleMiddle, titleSufix), style = "margin-left:0px;"
     )
   ),
@@ -584,7 +584,7 @@ fluidPage(
           p("The idle timeout (the time when browser session ends if user is inactive) is set to 30 minutes from server side but this can be overridden by browser configuration. To save uploaded data and selected settings, you can use a button on the 'Export' tab, a link is given to recover the settings later. This can also be used to send a link to a collaborator to show the same view. There is no planned expiration time for the links, users can delete the settings if they are concerned about the privacy. Though, when version of ClustVis changes, old saved settings may not be fully compatible with the new version if e.g. there are some new features. "),
 					h5("Data import", id = "upload"),
 					p("We aimed for a simple input data format. The numeric data matrix is situated in the bottom right corner, dimensions presented in rows and points in columns. Row labels and annotations are left from the matrix, column labels and annotations are above the matrix. Annotation labels are in the first row and column, respectively. Format of the input file is shown on the image below. Annotations are optional, data sets without annotations can be uploaded as well (on the example image, omitting rows 2-4 and/or columns B and C). When taking data from spreadsheet program (e.g. MS Excel), you can copy-paste the data to 'Paste data' box or export the data as delimited text file (ending with .csv or .tab) and then upload this file to ClustVis. Uploading Excel native files directly (.xls or .xlsx) doesn't work."),
-					img(src = "helpTab/uploadTableArrows.png", width = "100%"),
+					img(src = file.path("helpTab","uploadTableArrows.png"), width = "100%"),
           p(),
 					p("In addition, it is possible to load settings that you have saved earlier (including data, drop-down settings etc.) or import data from",  
             a("MEM", href = "http://biit.cs.ut.ee/mem/", target = "_blank"), 
@@ -621,9 +621,9 @@ fluidPage(
 					p("On this tab, you can choose the method that is used for PCA. This method is also used for imputing missing values to the heatmap and it also determines, for example, whether values on the heatmap are centered or not. Number of components returned depends on the dimensions of the input data matrix. If there are more observations (n) than dimensions (d) then d principal components are calculated. Otherwise, the number of principal components is n."),
 					h5("PCA and heatmap", id = "pca_heatmap"),
 					p("These are the main tabs, allowing you to generate and customize PCA plot and heatmap. Each individual setting is described more precisely with a tooltip that appears if you hover over with the mouse. To download an image, you can use one of the buttons above the plot. The following color palettes from ColorBrewer are available:"),
-					img(src = "helpTab/colorBrewer.png"),
+					img(src = file.path("helpTab","colorBrewer.png")),
 					p("Only up to eight color groups are allowed on the PCA plot because human eye cannot distinguish more colors easily. In this case, shapes should be enough for separating the groups. The following shapes are used:"),
-					img(src = "helpTab/shapes.png"),
+					img(src = file.path("helpTab","shapes.png")),
 					p("If there are more groups than available shapes, some groups are not shown on the plot."),
 					h5("Interactivity of the plots", id = "interactivity"),
           p("With the recent updates of the tool, interactive mode was added to both PCA plot and heatmap which allows to click and hover over specific areas of the plot. This mode is available when going to PCA or heatmap tab and choosing 'change plot labels', 'add interactivity'. Interactivity is still experimental, we are hoping to get feedback from users. It is not made the default option because plots are slower to render. It is recommended to first set other options in non-interactive mode and then switch to interactive mode as the last step. For larger datasets where an interactive plot would take too long to render, it is automatically switched to non-interactive mode and a warning message is shown."),
@@ -645,7 +645,7 @@ fluidPage(
 					p("Heatmap is another popular way to visualize a data matrix. Values in the matrix are color coded and optionally, rows and/or columns are clustered. When looking at the annotations on top of the heatmap, one can get an overview which annotated groups are separated better than others. "),
 					p("When reading the clustering on heatmap, attention should be paid which objects are merged into clustering tree first, not the exact order of rows and/or columns. Any two branches can be swapped without changing the meaning of the tree."),
 					p("An example output and its interpretation is shown below:"),
-					img(src = "helpTab/interpretation.png", width = "100%"),
+					img(src = file.path("helpTab","interpretation.png"), width = "100%"),
 					h5("Mathematical basis", id = "mathematics"),
           p("Calculation of principal components is thoroughly explained in the book by Ian Jolliffe (see Jolliffe, Ian. Principal component analysis. John Wiley & Sons, Ltd, 2002). "),
 					p("Hierarchical clustering of the heatmap starts with calculating all pairwise distances. Objects with the smallest distance are merged in each step. Clustering method defines how to go from object level to cluster level when calculating distance between two clusters."),

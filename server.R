@@ -1,7 +1,7 @@
 #Author: Tauno Metsalu
 #Copyright: 2016 University of Tartu
 
-source("/srv/shiny-server/global.R")
+source(file.path("","srv","shiny-server","global.R") )
 
 shinyServer(function(input, output, session) {
 	readData = reactive({
@@ -9,7 +9,7 @@ shinyServer(function(input, output, session) {
 		gAnno = toBoolean(input$uploadGuessAnno)
 		
 		if(input$uploadDataInput == 1){
-			f = str_c(path, "datasets/", input$uploadSampleData)
+			f = file.path(path, "datasets", input$uploadSampleData)
 		} else if(input$uploadDataInput == 2){
 			inFile = input$uploadFile
 			if (is.null(input$uploadFile))  {return(NULL)}
