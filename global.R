@@ -1,7 +1,7 @@
 #Author: Tauno Metsalu
 #Copyright: 2016 University of Tartu
 
-srvPath= file.path("", "str")
+srvPath= file.path("", "srv")
 path = "/home/med-sal/gitlab_test/ClustVis/" #path of this file
 #libPath = "/usr/local/lib/R/site-library/" #path of R libraries
 sessPathLarge = file.path(srvPath,"settings_large","") #where to save settings with large datasets
